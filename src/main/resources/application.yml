@@ -1,0 +1,56 @@
+
+
+spring:
+  application:
+    name: dealkaro
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    validate-on-migrate: true
+
+  profiles:
+    active: local
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 565983987757-mranq68qk72i5pl2f5f6gndilr9fp4qm.apps.googleusercontent.com
+            client-secret: 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
+          github:
+            client-id: Ov23liWxAE8k5fU6rbCx
+            client-secret: 8b009ca2828c05d3142948304458a9bd54378c21
+jwt:
+  secret: dGhpc0lzQWJhc2U2NFNhZmVTZWNyZXRLZXkxMjM=====================
+  expiration: 120000
+
+app:
+  initial-setup-required: true
+  license-check-enabled: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+      type:
+        descriptor:
+          sql:
+            BasicBinder: TRACE
+
+upload:
+  dir: uploads/images
+server:
+  port: 8081
